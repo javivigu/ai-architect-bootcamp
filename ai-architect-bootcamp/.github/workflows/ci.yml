@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run tests in each project
+        run: |
+          set -e
+          for p in projects/*; do
+            echo "=== Running in $p ==="
+            if [ -f "$p/requirements.txt" ]; then
+              python -m pip install -r "$p/requirements.txt"
+            fi
+            if [ -d "$p/tests" ]; then
+              pytest -q "$p/tests" || exit 1
+            fi
+          done

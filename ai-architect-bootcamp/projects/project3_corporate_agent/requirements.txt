@@ -1,0 +1,11 @@
+python-dotenv
+ipykernel
+jupyter
+pytest
+requests
+langchain
+langgraph
+faiss-cpu
+chromadb
+sentence-transformers
+openai

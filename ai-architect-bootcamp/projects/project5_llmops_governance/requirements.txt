@@ -1,0 +1,9 @@
+python-dotenv
+ipykernel
+jupyter
+pytest
+requests
+mlflow
+pytest
+pandas
+numpy

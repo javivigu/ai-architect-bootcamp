@@ -1,0 +1,10 @@
+python-dotenv
+ipykernel
+jupyter
+pytest
+requests
+boto3
+opensearch-py
+langchain
+pydantic
+requests
